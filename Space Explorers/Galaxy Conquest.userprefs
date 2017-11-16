@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AddPoints.cs">
+    <Files>
+      <File FileName="Assets\MovementComponent.cs" Line="107" Column="110" />
+      <File FileName="Assets\GunScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\AIPatrol.cs" Line="1" Column="1" />
+      <File FileName="Assets\PointsComponent.cs" Line="18" Column="46" />
+      <File FileName="Assets\Pickup.cs" Line="10" Column="53" />
+      <File FileName="Assets\AddPoints.cs" Line="11" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
