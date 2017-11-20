@@ -19,6 +19,7 @@ public class MovementComponent : MonoBehaviour {
 	[SerializeField] private float timeToDie = 10;
 	[SerializeField] private int maxJumps = 2;
 	[SerializeField] private float boostModifier = 2;
+	bool facingRight = true;
 	private int timesJumped;
 
 	//Use for loading stuff that takes awhile to load
@@ -36,6 +37,13 @@ public class MovementComponent : MonoBehaviour {
 
 	}
 
+	public void Flip() {
+		Vector3 temp = transform.localScale;
+		temp.x = -1 * temp.x;
+		transform.localScale = temp;
+		facingRight = !facingRight;
+	}
+
 	IEnumerator DestroyUnit() {
 		yield return new WaitForSeconds(timeToDie);
 		Destroy (gameObject);
@@ -44,6 +52,10 @@ public class MovementComponent : MonoBehaviour {
 
 	public float GetSpeed {
 		get { return speed; }
+	}
+
+	public bool FacingRight {
+		get { return facingRight; }
 	}
 
 	void ChangeSpeed(int modifier) {
@@ -66,7 +78,7 @@ public class MovementComponent : MonoBehaviour {
 
 			//Handles player movement
 			if (Input.GetKey (moveForward)) {
-
+                
 				tempVelocity = Vector3.forward * speed;
 				tempVelocity.y = rb.velocity.y;
 				rb.velocity = tempVelocity;

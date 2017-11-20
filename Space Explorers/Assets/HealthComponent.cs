@@ -6,14 +6,21 @@ using UnityEngine;
 //This script is used to track the health of an object. It will despawn the object if their health reaches 0. Damage and healing should be added to objects via DamageScript and HealScript respectively.
 public class HealthComponent : MonoBehaviour {
 
+	[SerializeField] private GameObject dropOnDeath;
 	[SerializeField] private float health = 10.0f;
 
 	//This function is used instead of Update() to conserve resources since the player's health should only change through AddDamage and AddHealth
 	void CheckHealth() {
 		//If health less than or equal to 0, despawns the player.
 		if (health <= 0.0f) {
+
+			if (dropOnDeath != null) {
+				Instantiate (dropOnDeath, transform.position, transform.rotation);
+			}
+
 			gameObject.SetActive (false);
-			Debug.Log ("Unit is dead");
+			Debug.Log (gameObject.name + " is dead");
+			Destroy (gameObject);
 		}
 	}
 

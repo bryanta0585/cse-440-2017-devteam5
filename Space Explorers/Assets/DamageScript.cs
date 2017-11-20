@@ -7,7 +7,7 @@ public class DamageScript : MonoBehaviour {
 
 	[SerializeField] private float damage = 1.0f; //Defines the amount of health lost when an object with a HealthComponentScript collides with an object with a HealScript
 
-	void OnCollisionEnter(Collision other) {
+	void OnCollisionEnter2D(Collision2D other) {
 		var healthComponent = other.collider.gameObject.GetComponent<HealthComponent> ();
 		if (healthComponent != null) { //Only trigger damage if the object possesses a HealthComponent
 			healthComponent.SendMessage("AddDamage", damage); //Attempts to call the AddDamage function of HealthComponentScript, has no effect if none is present.
@@ -15,7 +15,7 @@ public class DamageScript : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		var healthComponent = other.gameObject.GetComponent<HealthComponent> ();
 		if (healthComponent != null) { //Only trigger damage if the object possesses a HealthComponent
 			healthComponent.SendMessage("AddDamage", damage); //Attempts to call the AddDamage function of HealthComponentScript, has no effect if none is present.
