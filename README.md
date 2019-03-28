@@ -1,2 +1,2 @@
-# cse-440-2017-devteam5
-Repository for Development Team 5
+# CSE 440 Dev Team 5
+Repository for Galaxy Conquest Game
